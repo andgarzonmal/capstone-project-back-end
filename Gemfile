@@ -18,6 +18,8 @@ gem 'devise-jwt'
 
 gem 'fast_jsonapi'
 
+gem 'cancancan'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
