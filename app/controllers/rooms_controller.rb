@@ -13,7 +13,6 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-
     if @room.save
       render json: { notice: 'Room created successfully!' }, status: 200
     else
@@ -30,6 +29,8 @@ class RoomsController < ApplicationController
       render json: { error: 'Unable to delete room.' }, status: 400
     end
   end
+
+  private
 
   def room_params
     params.require(:room).permit(:name, :description, :photo)
