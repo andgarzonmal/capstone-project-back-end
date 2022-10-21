@@ -2,14 +2,12 @@ class ReservationsController < ApplicationController
   # before_action :authenticate_user!
   def index
     @user = current_user
-    if @user.role == 'admin'
-      @reservations = Reservation.all
-      render json: { reservations: @reservations }, status: :ok
-      else
-      @reservations = Reservation.where(user_id: current_user.id)
-      render json: { reservations: @reservations }, status: :ok
-    end
-    
+    @reservations = if @user.role == 'admin'
+                      Reservation.all
+                    else
+                      Reservation.where(user_id: current_user.id)
+                    end
+    render json: { reservations: @reservations }, status: :ok
   end
 
   def create
