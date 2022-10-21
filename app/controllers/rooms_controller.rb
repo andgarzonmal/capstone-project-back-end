@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   # before_action :authenticate_user!
-
+   load_and_authorize_resource
+  
   def index
     @rooms = Room.all
     render json: { rooms: @rooms }, status: :ok
