@@ -5,14 +5,14 @@ class Users::SessionsController < Devise::SessionsController
 
   def respond_with(resource, _opts = {})
     if current_user
-    render json: {
-      status: { code: 200, message: 'Logged in sucessfully.' },
-      data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
-    }, status: :ok
-    else 
+      render json: {
+        status: { code: 200, message: 'Logged in sucessfully.' },
+        data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+      }, status: :ok
+    else
       render json: {
         status: 401,
-        message: "Wrong email or password"
+        message: 'Wrong email or password'
       }, status: :unauthorized
     end
   end
