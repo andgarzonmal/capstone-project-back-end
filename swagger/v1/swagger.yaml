@@ -11,7 +11,7 @@ paths:
       - Users
       responses:
         '200':
-          description: Log in in successful.
+          description: Log in in Successful..
         '401':
           description: Please check for your email or password.
       requestBody:
@@ -41,18 +41,18 @@ paths:
       - Users
       responses:
         '200':
-          description: logged out successfully.
+          description: logged out Successful.ly.
         '401':
           description: Couldn't find an active session.
 
   "/signup":
     post:
-      summary: Log in and get bearer token
+      summary: Sign up and get bearer token
       tags:
       - Users
       responses:
         '200':
-          description: Log in in successful.
+          description: Sign up Successful..
         '401':
           description: Please check for your email or password.
       requestBody:
@@ -117,7 +117,7 @@ paths:
                       format: date
                   required:
                   - city
-                  - email
+                  - date
               required:
               - room
     get:
@@ -126,7 +126,7 @@ paths:
       summary: list all reservations
       responses:
         '200':
-          description: successful
+          description: Successful.
   "/rooms/{room_id}/reservations/{id}":
     parameters:
     - name: room_id
@@ -147,7 +147,7 @@ paths:
       summary: show unique reservation
       responses:
         '200':
-          description: successful
+          description: Successful.
         '401':
           description: Unable to get reservation plase check room id.
   "/rooms":
@@ -157,7 +157,7 @@ paths:
       summary: list all rooms
       responses:
         '200':
-          description: successful
+          description: Successful.
         '401':
           description: Rooms not found.
     post:
@@ -205,7 +205,7 @@ paths:
       summary: show room
       responses:
         '200':
-          description: successful
+          description: Successful.
         '401':
           description: Room not found.
 servers:
