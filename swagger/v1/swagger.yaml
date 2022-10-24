@@ -1,0 +1,215 @@
+---
+openapi: 3.0.1
+info:
+  title: Rent rooms api 🏠
+  version: v1
+paths:
+  "/login":
+    post:
+      summary: Log in and get bearer token
+      tags:
+      - Users
+      responses:
+        '200':
+          description: Log in in successful.
+        '401':
+          description: Please check for your email or password.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      format: email
+                    password:
+                      type: string
+                      format: password
+                  required:
+                  - email
+                  - password
+              required:
+              - user
+  "/logout":
+    delete:
+      summary: Log out from app
+      tags:
+      - Users
+      responses:
+        '200':
+          description: logged out successfully.
+        '401':
+          description: Couldn't find an active session.
+
+  "/signup":
+    post:
+      summary: Log in and get bearer token
+      tags:
+      - Users
+      responses:
+        '200':
+          description: Log in in successful.
+        '401':
+          description: Please check for your email or password.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name: 
+                      type: string
+                      format: name
+                    email:
+                      type: string
+                      format: email
+                    password:
+                      type: string
+                      format: password
+                    role: 
+                      type: string
+                      format: role
+                  required:
+                  - name
+                  - email
+                  - password
+              required:
+              - user
+  "/rooms/{room_id}/reservations":
+    parameters:
+    - name: room_id
+      in: path
+      description: room_id
+      required: true
+      schema:
+        type: string
+        
+    post:
+      summary: Create a new reservation.
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: Reservation created successfully.
+        '401':
+          description: Unable to create reservation.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reservation:
+                  type: object
+                  properties:
+                    city: 
+                      type: string
+                      format: city
+                    date:
+                      type: string
+                      format: date
+                  required:
+                  - city
+                  - email
+              required:
+              - room
+    get:
+      tags:
+        - Reservations
+      summary: list all reservations
+      responses:
+        '200':
+          description: successful
+  "/rooms/{room_id}/reservations/{id}":
+    parameters:
+    - name: room_id
+      in: path
+      description: room_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+        - Reservations
+      summary: show unique reservation
+      responses:
+        '200':
+          description: successful
+        '401':
+          description: Unable to get reservation plase check room id.
+  "/rooms":
+    get:
+      tags:
+        - Rooms
+      summary: list all rooms
+      responses:
+        '200':
+          description: successful
+        '401':
+          description: Rooms not found.
+    post:
+      summary: Create a new reservation.
+      tags:
+        - Rooms
+      responses:
+        '200':
+          description: Reservation created successfully.
+        '401':
+          description: Unable to create reservation.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reservation:
+                  type: object
+                  properties:
+                    name: 
+                      type: string
+                      format: name
+                    description:
+                      type: string
+                      format: string
+                    photo: 
+                      type: string
+                      format: url
+                  required:
+                  - name
+                  - description
+                  - photo
+  "/rooms/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+        - Rooms
+      summary: show room
+      responses:
+        '200':
+          description: successful
+        '401':
+          description: Room not found.
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
