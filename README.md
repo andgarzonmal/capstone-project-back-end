@@ -79,9 +79,9 @@ Coming soon...
 
 👤 **Dino Quispe**
 
-GitHub: [@dqarias](https://github.com/Daf98)
-Twitter: [@DinoRonald7](https://twitter.com/DinoRonald7)
-LinkedIn: [Dino Quispe](https://www.linkedin.com/in/dino-ronald-quispe-arias-8ba72174/)
+- GitHub: [@dqarias](https://github.com/Daf98)
+- Twitter: [@DinoRonald7](https://twitter.com/DinoRonald7)
+- LinkedIn: [Dino Quispe](https://www.linkedin.com/in/dino-ronald-quispe-arias-8ba72174/)
 
 ## 🤝 Contributing
 
