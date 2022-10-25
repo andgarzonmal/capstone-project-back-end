@@ -64,7 +64,7 @@ To run the tests:
 - run `rspec`
 
 ## Live demo
-Coming soon...
+[Heroku app](http://roomifyap.herokuapp.com/)
 ## Author
 
 👤 **Andres Garzon Maldonado**
