@@ -1,6 +1,8 @@
 # Capstone Backend
 
-> This is the backend used for our capstone project. [It's based on this ERD](./app/assets/images/ERD.png)
+> This is the backend used for our capstone project.
+
+> ![It's based on this ERD](./app/assets/images/ERD.png)
 
 
 ## Built With
