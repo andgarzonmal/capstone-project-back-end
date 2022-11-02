@@ -1,6 +1,6 @@
 # Capstone Backend
 
-> This is the backend used for our capstone project.
+> This is the backend used for our capstone project. [It's based on this ERD](./app/assets/images/ERD.png)
 
 
 ## Built With
@@ -44,6 +44,11 @@ Cloning a repository
 
 - Run `bundle install`;
 
+- To setup your database run:
+
+`rails db:create`
+`rails db:migrate`
+
 - Delete config/credentials.yml and config/master.key
 
 - Run `EDITOR="mate --wait" bin/rails credentials:edit`
@@ -60,6 +65,8 @@ To run the tests:
 - Open your terminal;
 
 - Go to the application
+
+- run `rake rswag`
 
 - run `rspec`
 
