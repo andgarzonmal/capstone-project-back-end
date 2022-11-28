@@ -305,7 +305,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :registerable
   config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.fetch(:secret_key_base)
+    jwt.secret = Rails.application.credentials.fetch(:wsl_secret_key)
     jwt.dispatch_requests = [
       ['POST', %r{^/login$}]
     ]
